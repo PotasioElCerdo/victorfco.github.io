@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VictorFco | Official Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #0b0c10;
+            --container-bg: #1f2833;
+            --accent-cyan: #66fcf1;
+            --accent-green: #45f3ff;
+            --text-main: #ffffff;
+            --text-muted: #c5c6c7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- NAVIGATION BAR --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(11, 12, 16, 0.8);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(102, 252, 241, 0.1);
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: var(--accent-cyan);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .logo-area img {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-cyan);
+        }
+
+        /* --- HERO BANNER --- */
+        .hero {
+            margin-top: 80px;
+            position: relative;
+            height: 350px;
+            background: linear-gradient(rgba(0,0,0,0.4), var(--bg-color)), url('banner.jpg') no-repeat center center/cover;
+            /* Note: Replace 'banner.jpg' with your actual background image */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 4px solid var(--accent-cyan);
+            box-shadow: 0px 0px 20px rgba(102, 252, 241, 0.3);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(102, 252, 241, 0.6), 0 0 20px rgba(102, 252, 241, 0.4);
+            margin-bottom: 15px;
+        }
+
+        /* --- SOCIAL LINKS --- */
+        .social-icons {
+            display: flex;
+            gap: 20px;
+            background: rgba(31, 40, 51, 0.8);
+            padding: 10px 25px;
+            border-radius: 50px;
+            border: 1px solid rgba(102, 252, 241, 0.2);
+        }
+
+        .social-icons a {
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Custom social colors on hover */
+        .social-icons a.youtube:hover { color: #ff0000; }
+        .social-icons a.twitch:hover { color: #9146ff; }
+        .social-icons a.twitter:hover { color: #1da1f2; }
+        .social-icons a.tiktok:hover { color: #ff0050; }
+        .social-icons a.discord:hover { color: #5865f2; }
+
+        /* --- MAIN CONTENT & BIO --- */
+        .main-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .bio-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .bio-section {
+                grid-template-columns: 1fr;
+            }
+            .hero-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        .lang-card {
+            background: var(--container-bg);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid var(--accent-cyan);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .lang-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .lang-card h2 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--accent-cyan);
+        }
+
+        .games-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .games-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 8px;
+            color: var(--text-muted);
+        }
+
+        .games-list li::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: var(--accent-green);
+        }
+
+        /* --- DISCORD WIDGET BANNER --- */
+        .discord-banner {
+            background: linear-gradient(135deg, #5865F2 0%, #404eed 100%);
+            border-radius: 15px;
+            padding: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            box-shadow: 0 10px 30px rgba(88, 101, 242, 0.3);
+        }
+
+        .discord-text h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+
+        .discord-text p {
+            color: #e3e5e8;
+        }
+
+        .discord-btn {
+            background: #fff;
+            color: #5865F2;
+            padding: 15px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .discord-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(255,255,255,0.4);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: rgba(200,200,200,0.4);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo-area">
+            <img src="avatar.png" alt="VictorFco Profile">
+            <span>VictorFco</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#" class="active">Inicio</a></li>
+            <li><a href="#">Otros</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <h1 class="hero-title">VictorFco</h1>
+        
+        <div class="social-icons">
+            <a href="#" class="youtube" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="twitch" title="Twitch"><i class="fab fa-twitch"></i></a>
+            <a href="#" class="twitter" title="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" class="tiktok" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="#" class="discord" title="Discord"><i class="fab fa-discord"></i></a>
+        </div>
+    </div>
+
+    <div class="main-container">
+        
+        <div class="bio-section">
+            <div class="lang-card">
+                <h2>Hola! Me presento, soy VictorFco</h2>
+                <p>Me gusta hacer fangames, mods y otro tipo de contenido fan, y algunas series/juegos que me gustan son:</p>
+                <ul class="games-list">
+                    <li>Yo-kai Watch (anime y juegos)</li>
+                    <li>Undertale / Deltarune</li>
+                    <li>Sonic the Hedgehog</li>
+                    <li>Nintendo (en general, especialmente de la era de 3DS / Wii U y para atrás)</li>
+                    <li>Brawl Stars</li>
+                    <li>Minecraft</li>
+                    <li>¡Y más!</li>
+                </ul>
+            </div>
+
+            <div class="lang-card">
+                <h2>Hi! I'm VictorFco</h2>
+                <p>I enjoy making fangames, mods, and other fan-made content. Some of my favorite series/games are:</p>
+                <ul class="games-list">
+                    <li>Yo-kai Watch (anime and games)</li>
+                    <li>Undertale / Deltarune</li>
+                    <li>Sonic the Hedgehog</li>
+                    <li>Nintendo (in general, especially from the 3DS / Wii U era and earlier)</li>
+                    <li>Brawl Stars</li>
+                    <li>Minecraft</li>
+                    <li>And more!</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="discord-banner">
+            <div class="discord-text">
+                <h2>¡Únete a mi Discord!</h2>
+                <p>Este es el lugar de reunión oficial de la comunidad de VictorFco. ¡Ven a charlar con nosotros!</p>
+            </div>
+            <a href="YOUR_DISCORD_INVITE_LINK" target="_blank" class="discord-btn">
+                <i class="fab fa-discord"></i> Entrar al Servidor
+            </a>
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; 2026 VictorFco. All Rights Reserved. Built with style.
+    </footer>
+
+</body>
+</html>
