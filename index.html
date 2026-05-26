@@ -38,20 +38,20 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 8%;
-            background: rgba(11, 12, 16, 0.8);
+            padding: 15px 8%;
+            background: rgba(11, 12, 16, 0.85);
             backdrop-filter: blur(10px);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(102, 252, 241, 0.1);
+            border-bottom: 1px solid rgba(102, 252, 241, 0.15);
         }
 
         .logo-area {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             font-weight: 800;
             font-size: 1.2rem;
             color: var(--accent-cyan);
@@ -60,9 +60,10 @@
         }
 
         .logo-area img {
-            width: 35px;
-            height: 35px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
+            border: 2px solid var(--accent-cyan);
         }
 
         .nav-links {
@@ -84,51 +85,51 @@
 
         /* --- HERO BANNER --- */
         .hero {
-            margin-top: 80px;
+            margin-top: 70px;
             position: relative;
-            height: 350px;
-            background: linear-gradient(rgba(0,0,0,0.4), var(--bg-color)), url('banner.jpg') no-repeat center center/cover;
-            /* Note: Replace 'banner.jpg' with your actual background image */
+            height: 380px;
+            background: linear-gradient(rgba(11, 12, 16, 0.3), var(--bg-color)), url('banner.png') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             border-bottom: 4px solid var(--accent-cyan);
-            box-shadow: 0px 0px 20px rgba(102, 252, 241, 0.3);
+            box-shadow: 0px 5px 25px rgba(102, 252, 241, 0.2);
+            padding: 20px;
         }
 
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            color: #fff;
-            text-shadow: 0 0 10px rgba(102, 252, 241, 0.6), 0 0 20px rgba(102, 252, 241, 0.4);
-            margin-bottom: 15px;
+        /* Using your custom stylized VictorFco.png text logo */
+        .hero-logo-img {
+            max-width: 450px;
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0px 0px 15px rgba(102, 252, 241, 0.6));
+            margin-bottom: 20px;
         }
 
         /* --- SOCIAL LINKS --- */
         .social-icons {
             display: flex;
-            gap: 20px;
-            background: rgba(31, 40, 51, 0.8);
-            padding: 10px 25px;
+            gap: 22px;
+            background: rgba(31, 40, 51, 0.85);
+            padding: 12px 28px;
             border-radius: 50px;
-            border: 1px solid rgba(102, 252, 241, 0.2);
+            border: 1px solid rgba(102, 252, 241, 0.25);
+            backdrop-filter: blur(5px);
         }
 
         .social-icons a {
             color: var(--text-muted);
-            font-size: 1.5rem;
-            transition: transform 0.3s ease, color 0.3s ease;
+            font-size: 1.6rem;
+            transition: transform 0.2s ease, color 0.2s ease;
         }
 
         .social-icons a:hover {
-            transform: translateY(-3px);
+            transform: translateY(-4px);
         }
 
-        /* Custom social colors on hover */
+        /* Custom branding hover effects */
         .social-icons a.youtube:hover { color: #ff0000; }
         .social-icons a.twitch:hover { color: #9146ff; }
         .social-icons a.twitter:hover { color: #1da1f2; }
@@ -152,41 +153,53 @@
         @media (max-width: 768px) {
             .bio-section {
                 grid-template-columns: 1fr;
+                gap: 25px;
             }
-            .hero-title {
-                font-size: 2.5rem;
+            .hero {
+                height: 320px;
+            }
+            .hero-logo-img {
+                max-width: 300px;
             }
         }
 
         .lang-card {
             background: var(--container-bg);
-            padding: 30px;
+            padding: 35px;
             border-radius: 15px;
             border-left: 5px solid var(--accent-cyan);
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .lang-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(102, 252, 241, 0.1);
         }
 
         .lang-card h2 {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             margin-bottom: 15px;
             color: var(--accent-cyan);
+            font-weight: 800;
+        }
+
+        .lang-card p {
+            color: #e3e5e8;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
         }
 
         .games-list {
             list-style: none;
-            margin-top: 15px;
         }
 
         .games-list li {
             position: relative;
             padding-left: 25px;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             color: var(--text-muted);
+            font-size: 0.95rem;
         }
 
         .games-list li::before {
@@ -194,6 +207,8 @@
             position: absolute;
             left: 0;
             color: var(--accent-green);
+            font-size: 0.8rem;
+            top: 2px;
         }
 
         /* --- DISCORD WIDGET BANNER --- */
@@ -228,22 +243,25 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .discord-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(255,255,255,0.4);
+            transform: scale(1.03);
+            box-shadow: 0 6px 20px rgba(255,255,255,0.3);
         }
 
         footer {
             text-align: center;
-            padding: 30px;
-            color: rgba(200,200,200,0.4);
-            font-size: 0.9rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            margin-top: 50px;
+            padding: 40px;
+            color: rgba(200,200,200,0.3);
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255,255,255,0.03);
+            margin-top: 60px;
         }
     </style>
 </head>
@@ -251,7 +269,7 @@
 
     <nav>
         <div class="logo-area">
-            <img src="avatar.png" alt="VictorFco Profile">
+            <img src="pfp.png" alt="VictorFco">
             <span>VictorFco</span>
         </div>
         <ul class="nav-links">
@@ -261,7 +279,7 @@
     </nav>
 
     <div class="hero">
-        <h1 class="hero-title">VictorFco</h1>
+        <img src="VictorFco.png" alt="VictorFco Banner Title" class="hero-logo-img">
         
         <div class="social-icons">
             <a href="#" class="youtube" title="YouTube"><i class="fab fa-youtube"></i></a>
@@ -280,9 +298,9 @@
                 <p>Me gusta hacer fangames, mods y otro tipo de contenido fan, y algunas series/juegos que me gustan son:</p>
                 <ul class="games-list">
                     <li>Yo-kai Watch (anime y juegos)</li>
-                    <li>Undertale / Deltarune</li>
+                    <li>Undertale/Deltarune</li>
                     <li>Sonic the Hedgehog</li>
-                    <li>Nintendo (en general, especialmente de la era de 3DS / Wii U y para atrás)</li>
+                    <li>Nintendo (en general, especialmente de la era de 3ds/Wii U y para atrás)</li>
                     <li>Brawl Stars</li>
                     <li>Minecraft</li>
                     <li>¡Y más!</li>
@@ -291,12 +309,12 @@
 
             <div class="lang-card">
                 <h2>Hi! I'm VictorFco</h2>
-                <p>I enjoy making fangames, mods, and other fan-made content. Some of my favorite series/games are:</p>
+                <p>I enjoy making fangames, mods, and other fan-made content, and some of my favorite series/games are:</p>
                 <ul class="games-list">
                     <li>Yo-kai Watch (anime and games)</li>
-                    <li>Undertale / Deltarune</li>
+                    <li>Undertale/Deltarune</li>
                     <li>Sonic the Hedgehog</li>
-                    <li>Nintendo (in general, especially from the 3DS / Wii U era and earlier)</li>
+                    <li>Nintendo (in general, especially from the 3ds/Wii U era and earlier)</li>
                     <li>Brawl Stars</li>
                     <li>Minecraft</li>
                     <li>And more!</li>
@@ -307,9 +325,9 @@
         <div class="discord-banner">
             <div class="discord-text">
                 <h2>¡Únete a mi Discord!</h2>
-                <p>Este es el lugar de reunión oficial de la comunidad de VictorFco. ¡Ven a charlar con nosotros!</p>
+                <p>Este es el lugar de reunión oficial de la comunidad de VictorFco.</p>
             </div>
-            <a href="YOUR_DISCORD_INVITE_LINK" target="_blank" class="discord-btn">
+            <a href="https://discord.gg/YOUR_INVITE_CODE" target="_blank" class="discord-btn">
                 <i class="fab fa-discord"></i> Entrar al Servidor
             </a>
         </div>
@@ -317,7 +335,7 @@
     </div>
 
     <footer>
-        &copy; 2026 VictorFco. All Rights Reserved. Built with style.
+        &copy; 2026 VictorFco. All Rights Reserved.
     </footer>
 
 </body>
